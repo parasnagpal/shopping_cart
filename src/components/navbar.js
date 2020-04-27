@@ -1,5 +1,6 @@
 import React from 'react'
-import {Navbar,NavbarBrand,NavItem,NavLink,NavbarText,Nav,Container} from 'reactstrap'
+import {Navbar,NavbarBrand,NavItem,NavLink,Nav,Container} from 'reactstrap'
+import {FiShoppingCart} from 'react-icons/fi'
 
 class NavBar extends React.Component{
     render(){
@@ -9,7 +10,7 @@ class NavBar extends React.Component{
                     <NavbarBrand>Shopping Cart</NavbarBrand>
                     <Nav>
                         <NavItem>
-                            <NavLink className='white'>Cart</NavLink>
+                            <NavLink className='white'>Cart <FiShoppingCart/></NavLink>
                         </NavItem>
                     </Nav>
                 </Container>
