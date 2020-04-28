@@ -1,11 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Card,CardImg,CardBody,CardTitle,CardText,Container} from 'reactstrap'
+import {Card,CardImg,CardBody,CardTitle,CardText,Container,Row,Col} from 'reactstrap'
 
 class Home extends React.Component{
     render(){
         let displayItems=this.props.items.map((item)=>{
             return(
+                <Col md="4" lg="3">
                 <Card>
                     <CardImg top width="100%" src={item.img} alt="Prod Image"/>
                     <CardBody>
@@ -13,11 +14,14 @@ class Home extends React.Component{
                         <CardText>{item.price}</CardText>
                     </CardBody>
                 </Card>
+                </Col>
             );
         })
         return (
             <Container>
-                {displayItems}
+                <Row>
+                    {displayItems}
+                </Row>
             </Container>
         );
     }
