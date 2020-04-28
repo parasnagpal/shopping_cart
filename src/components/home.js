@@ -6,19 +6,22 @@ class Home extends React.Component{
     render(){
         let displayItems=this.props.items.map((item)=>{
             return(
-                <Col md="4" lg="3">
-                <Card>
-                    <CardImg top width="100%" src={item.img} alt="Prod Image"/>
-                    <CardBody>
-                        <CardTitle>{item.title}</CardTitle>
-                        <CardText>{item.price}</CardText>
-                    </CardBody>
-                </Card>
+                <Col key={item.id} xs="12" sm="6" md="3" lg="2" className="align-items-stretch">
+                    <Card className="align-self-stretch shadow">
+                        <CardImg top width="100%" src={item.img} alt="Prod Image"/>
+                        <CardBody>
+                            <CardTitle className="text-small">{item.title}</CardTitle>
+                            <CardText className="bold">{item.price}</CardText>
+                        </CardBody>
+                    </Card>
                 </Col>
             );
         })
         return (
             <Container>
+                <div className="d-flex justify-content-center">
+                    <h1>Our Items</h1>
+                </div>    
                 <Row>
                     {displayItems}
                 </Row>

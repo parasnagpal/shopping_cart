@@ -40,3 +40,15 @@
 .white{
   color: white !important;
 }
+
+.text-small{
+  font-size: small;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.ellipsis{
+  text-overflow: ellipsis;
+}
