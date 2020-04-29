@@ -5,3 +5,9 @@ export const addtocart=(id)=>{
     }
 }
     
+export const removefromcart=(id)=>{
+    return{
+        type:"REMOVE_FROM_CART",
+        id
+    }
+}

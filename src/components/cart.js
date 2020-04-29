@@ -1,6 +1,8 @@
 import React from 'react'
 import {Card,CardBody,CardImg,CardText,CardTitle,Row,Col,Container,Button} from 'reactstrap'
 import {connect} from 'react-redux'
+import {RiArrowRightLine} from 'react-icons/ri'
+import {addtocart,removefromcart} from './actions/cartAction'
 
 class Cart extends React.Component{
 
@@ -14,7 +16,7 @@ class Cart extends React.Component{
         return(
             <>
                 <h3>Order Total:{this.props.total}</h3>
-                <Row className="justify-content-center"><Button outline>Checkout</Button></Row>
+                <Row className="justify-content-center"><Button outline><RiArrowRightLine/></Button></Row>
             </>   
         );
     }
@@ -53,6 +55,17 @@ class Cart extends React.Component{
     }
 }
 
+const mapDispatchToProps=(dispatch)=>{
+    return{
+        addtocart:function(id){
+            dispatch(addtocart(id))
+        },
+        removefromcart:function(id){
+            dispatch(removefromcart(id))
+        }
+    }
+}
+
 const mapStateToProps=(state)=>{
     return {
         cartItems:state.cartItems,
@@ -60,4 +73,4 @@ const mapStateToProps=(state)=>{
     }
 }
 
-export default connect(mapStateToProps)(Cart)
+export default connect(mapStateToProps,mapDispatchToProps)(Cart)

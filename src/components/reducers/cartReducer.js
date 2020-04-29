@@ -7,19 +7,19 @@ import Item5 from '../../images/image5.jpg'
 const initialState={
     items:[
         {id:1,title:'Men Black Abstract Printed Round Neck T-shirt'
-        ,brand:'Here&Now',price:'599',MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
+        ,brand:'Here&Now',price:599,MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
         ,img:Item1},
         {id:2,title:'Men Black Solid Iconic T7 Slim Fit Track Pants'
-        ,brand:'Puma',price:'599',MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
+        ,brand:'Puma',price:599,MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
         ,img:Item2},
         {id:3,title:'Men Black NRGY Neko Skim Running Shoes'
-        ,brand:'Here&Now',price:'599',MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
+        ,brand:'Here&Now',price:599,MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
         ,img:Item3},
         {id:4,title:'Women Black Slim Fit High-Rise Clean Look Stretchable Jeans'
-        ,brand:'Here&Now',price:'599',MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
+        ,brand:'Here&Now',price:599,MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
         ,img:Item4},
         {id:5,title:'Women Navy Blue Solid Crop Jacket'
-        ,brand:'Street9',price:'599',MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
+        ,brand:'Street9',price:599,MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
         ,img:Item5},
     ],
     cartItems:[],
