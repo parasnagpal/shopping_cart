@@ -21,11 +21,32 @@ const initialState={
         {id:5,title:'Women Navy Blue Solid Crop Jacket'
         ,brand:'Street9',price:'599',MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
         ,img:Item5},
-    ]
+    ],
+    cartItems:[]
 }
 
 const cartReducer=(state=initialState,action)=>{
-    return state;
+    if(action.type==="ADD_TO_CART"){
+        let newitem=state.items.find(item=>item.id===action.id)
+        if(state.cartItems.find(item=>item.id===action.id)){
+            newitem.quantity+=1;
+            return{
+                ...state,
+                total:state.total+newitem.price
+            }    
+        }
+        else{
+            newitem.quantity=1;
+            return{
+                ...state,
+                cartItems:[...state.cartItems,newitem],
+                total:state.total+newitem.price
+            }
+        }
+    }
+    else
+        return state
+    
 }
 
 export default cartReducer;

@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Card,CardImg,CardBody,CardTitle,CardText,Container,Row,Col} from 'reactstrap'
+import {Card,CardImg,CardBody,CardTitle,CardText,Container,Row,Col,Button} from 'reactstrap'
+import {MdAddShoppingCart} from 'react-icons/md'
+import {addtocart} from './actions/cartAction'
 
 class Home extends React.Component{
     render(){
@@ -10,8 +12,11 @@ class Home extends React.Component{
                     <Card className="align-self-stretch shadow">
                         <CardImg top width="100%" src={item.img} alt="Prod Image"/>
                         <CardBody>
-                            <CardTitle className="text-small">{item.title}</CardTitle>
-                            <CardText className="bold">{item.price}</CardText>
+                            <CardTitle className="text-small ellipsis">{item.title}</CardTitle>
+                            <Row>
+                                <Col className="align-self-center"><CardText className="bold">₹{item.price}</CardText></Col>
+                                <Col><Button color="dark" outline onClick={()=>this.props.addtocart(item.id)} className="rounded-circle"><MdAddShoppingCart/></Button></Col>
+                            </Row>
                         </CardBody>
                     </Card>
                 </Col>
@@ -36,4 +41,12 @@ const mapStateToProps=(state)=>{
     }
 }
 
-export default connect(mapStateToProps)(Home)
+const mapDispatchToProps=(dispatch)=>{
+    return{
+        addtocart:function(id){
+            dispatch(addtocart(id));
+        }
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Home)
