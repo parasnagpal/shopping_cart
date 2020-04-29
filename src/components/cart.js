@@ -2,6 +2,7 @@ import React from 'react'
 import {Card,CardBody,CardImg,CardText,CardTitle,Row,Col,Container,Button} from 'reactstrap'
 import {connect} from 'react-redux'
 import {RiArrowRightLine} from 'react-icons/ri'
+import {FiMinusCircle,FiPlusCircle} from 'react-icons/fi'
 import {addtocart,removefromcart} from './actions/cartAction'
 
 class Cart extends React.Component{
@@ -34,6 +35,11 @@ class Cart extends React.Component{
                                 <CardTitle className="card-title">{item.title}</CardTitle>
                                 <CardText className="card-text">{item.quantity}</CardText>
                                 <CardText className="card-text"><small className="text-muted">{item.price}</small></CardText>
+                                <Row>
+                                    <FiMinusCircle onClick={()=>this.props.removefromcart(item.id)}/>
+                                    {item.quantity}
+                                    <FiPlusCircle onClick={()=>this.props.addtocart(item.id)}/>
+                                </Row>
                             </CardBody>
                         </Col>
                     </Row>

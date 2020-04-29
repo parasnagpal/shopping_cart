@@ -45,6 +45,18 @@ const cartReducer=(state=initialState,action)=>{
             }
         }
     }
+    else if(action.type==="REMOVE_FROM_CART"){
+        let item=state.cartItems.find(item=>item.id===action.id)
+        item.quantity=item.quantity-1
+        let newcart=state.cartItems
+        if(!item.quantity)
+            newcart.pop(item)
+        return{
+            ...state,
+            total:state.total-item.price,
+            cartItems:newcart
+        }
+    }
     else
         return state
     
