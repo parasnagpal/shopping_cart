@@ -22,7 +22,8 @@ const initialState={
         ,brand:'Street9',price:'599',MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
         ,img:Item5},
     ],
-    cartItems:[]
+    cartItems:[],
+    total:0
 }
 
 const cartReducer=(state=initialState,action)=>{
