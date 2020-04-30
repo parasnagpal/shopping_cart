@@ -1,5 +1,6 @@
 import React from 'react'
 import {Navbar,NavbarBrand,NavItem,NavLink,Nav,Container} from 'reactstrap'
+import {Link} from 'react-router-dom'
 import {FiShoppingCart} from 'react-icons/fi'
 
 class NavBar extends React.Component{
@@ -10,7 +11,7 @@ class NavBar extends React.Component{
                     <NavbarBrand>Shopping Cart</NavbarBrand>
                     <Nav>
                         <NavItem>
-                            <NavLink className='white'>Cart <FiShoppingCart/></NavLink>
+                            <Link to="/cart"><NavLink className='white'>Cart <FiShoppingCart/></NavLink></Link>
                         </NavItem>
                     </Nav>
                 </Container>
