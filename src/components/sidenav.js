@@ -1,17 +1,17 @@
 import React from 'react'
-import {Nav,NavItem} from 'reactstrap'
+import {Nav,NavItem,Row,NavLink} from 'reactstrap'
 import {Link} from 'react-router-dom'
 
 const SideNav=function(){
     return(
-        <>
-            <b>Categories</b>
+        <div>
+            <h3><b>Categories</b></h3>
             <Nav vertical>
-                <NavItem><Link to="/mens">Men</Link></NavItem>
-                <NavItem>Women</NavItem>
-                <NavItem>Children</NavItem>
+                <Row><NavItem><NavLink href="/men" className="color-black">Men</NavLink></NavItem></Row>
+                <Row><NavItem><NavLink href="/women" className="color-black">Women</NavLink></NavItem></Row>
+                <Row><NavItem><NavLink href="/children" className="color-black">Children</NavLink></NavItem></Row>
             </Nav>
-        </>
+        </div>
     );
 }
 export default SideNav

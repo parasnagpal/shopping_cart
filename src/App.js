@@ -6,6 +6,8 @@ import NavBar from './components/navbar'
 import Home from './components/home'
 import Cart from './components/cart'
 import Mens from './components/categories/mens'
+import Women from './components/categories/women'
+import Children from './components/categories/children'
 import SideNav from './components/sidenav'
 
 function App() {
@@ -18,7 +20,9 @@ function App() {
               <Col>
               <Switch>
                   <Route exact path="/" component={Home}/>
-                  <Route path="/mens" component={Mens}/>
+                  <Route path="/men" component={Mens}/>
+                  <Route path="/women" component={Women}/>
+                  <Route path="/children" component={Children}/>
                   <Route path="/cart" component={Cart} />
               </Switch>
               </Col>

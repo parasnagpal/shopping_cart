@@ -41,6 +41,15 @@ const initialState={
         ,brand:'Here&Now',price:599,MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
         ,img:Item3,category:'men'},
     ],
+    womenItems:[
+        {id:1,title:'Women Black Slim Fit High-Rise Clean Look Stretchable Jeans'
+        ,brand:'Here&Now',price:599,MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
+        ,img:Item4,category:'women'},
+        {id:2,title:'Women Navy Blue Solid Crop Jacket'
+        ,brand:'Street9',price:599,MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
+        ,img:Item5,category:'women'},
+    ],
+    childItems:[],
     cartItems:[],
     total:0
 }
@@ -50,7 +59,11 @@ const cartReducer=(state=initialState,action)=>{
         let newitem=state.items.find(item=>item.id===action.id && item.category===action.category)
         if(!newitem)
             newitem=state.mensItems.find(item=>item.id===action.id  && item.category===action.category)
-        if(state.cartItems.find(item=>item.id===action.id)){
+        if(!newitem)
+            newitem=state.womenItems.find(item=>item.id===action.id  && item.category===action.category)
+        if(!newitem)
+            newitem=state.childItems.find(item=>item.id===action.id  && item.category===action.category)
+        if(state.cartItems.find(item=>item.id===action.id && item.category===action.category)){
             newitem.quantity+=1;
             return{
                 ...state,
@@ -67,7 +80,7 @@ const cartReducer=(state=initialState,action)=>{
         }
     }
     else if(action.type==="REMOVE_FROM_CART"){
-        let item=state.cartItems.find(item=>item.id===action.id)
+        let item=state.cartItems.find(item=>item.id===action.id && item.category===action.category)
         item.quantity=item.quantity-1
         let newcart=state.cartItems
         if(!item.quantity)
