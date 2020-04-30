@@ -1,6 +1,5 @@
 import React from 'react'
 import {Nav,NavItem,Row,NavLink} from 'reactstrap'
-import {Link} from 'react-router-dom'
 
 const SideNav=function(){
     return(
