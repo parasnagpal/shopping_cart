@@ -14,7 +14,7 @@ function App() {
         <div className='container-fluid'>
         <NavBar/>
             <Row>
-              <Col sm="12" md="4"><SideNav/></Col>
+              <Col sm="12" md="2"><SideNav/></Col>
               <Col>
               <Switch>
                   <Route exact path="/" component={Home}/>

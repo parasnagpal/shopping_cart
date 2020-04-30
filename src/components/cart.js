@@ -36,9 +36,9 @@ class Cart extends React.Component{
                                 <CardText className="card-text">{item.quantity}</CardText>
                                 <CardText className="card-text"><small className="text-muted">{item.price}</small></CardText>
                                 <Row>
-                                    <FiMinusCircle onClick={()=>this.props.removefromcart(item.id)}/>
+                                    <FiMinusCircle onClick={()=>this.props.removefromcart(item.id,item.category)}/>
                                     {item.quantity}
-                                    <FiPlusCircle onClick={()=>this.props.addtocart(item.id)}/>
+                                    <FiPlusCircle onClick={()=>this.props.addtocart(item.id,item.category)}/>
                                 </Row>
                             </CardBody>
                         </Col>
@@ -63,11 +63,11 @@ class Cart extends React.Component{
 
 const mapDispatchToProps=(dispatch)=>{
     return{
-        addtocart:function(id){
-            dispatch(addtocart(id))
+        addtocart:function(id,category){
+            dispatch(addtocart(id,category))
         },
-        removefromcart:function(id){
-            dispatch(removefromcart(id))
+        removefromcart:function(id,category){
+            dispatch(removefromcart(id,category))
         }
     }
 }

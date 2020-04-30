@@ -15,7 +15,7 @@ class Mens extends React.Component{
                             <CardTitle className="text-small ellipsis">{item.title}</CardTitle>
                             <Row>
                                 <Col className="align-self-center"><CardText className="bold">₹{item.price}</CardText></Col>
-                                <Col><Button color="dark" outline onClick={()=>this.props.addtocart(item.id)} className="rounded-circle"><MdAddShoppingCart/></Button></Col>
+                                <Col><Button color="dark" outline onClick={()=>this.props.addtocart(item.id,item.category)} className="rounded-circle"><MdAddShoppingCart/></Button></Col>
                             </Row>
                         </CardBody>
                     </Card>
@@ -43,8 +43,8 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProps=(dispatch)=>{
     return{
-        addtocart:function(id){
-            dispatch(addtocart(id));
+        addtocart:function(id,category){
+            dispatch(addtocart(id,category));
         }
     }
 }
