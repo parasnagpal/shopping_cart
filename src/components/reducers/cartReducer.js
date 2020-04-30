@@ -3,6 +3,7 @@ import Item2 from '../../images/image2.jpg'
 import Item3 from '../../images/image3.jpg'
 import Item4 from '../../images/image4.jpg'
 import Item5 from '../../images/image5.jpg'
+import Mens1 from '../../images/mens/mens1.jpg'
 
 const initialState={
     items:[
@@ -21,6 +22,12 @@ const initialState={
         {id:5,title:'Women Navy Blue Solid Crop Jacket'
         ,brand:'Street9',price:599,MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
         ,img:Item5},
+    ],
+    mensItems:[
+        {id:1,title:'Men Maroon & Navy Blue Striped Round Neck T-shirt'
+        ,brand:'Roadster',price:1547,MRP:'1500',desc:'Black printed T-shirt, has a round neck, short sleeves'
+        ,img:Mens1},
+
     ],
     cartItems:[],
     total:0
